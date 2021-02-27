@@ -17,7 +17,6 @@ const CoreComponent = () => {
         setChildrenComponent(
             inputs.map((state, index) => {
                 if (index.toString() === e.target.id) {
-                    console.log('here')
                     state.value = e.target.value;
                 }
                 return state;
