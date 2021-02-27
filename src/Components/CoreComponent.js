@@ -14,11 +14,11 @@ const CoreComponent = () => {
     ]);
 
     const onChangeValue = (e) => {
-        
         setChildrenComponent(
             inputs.map((state, index) => {
-                if (index === e.id) {
-                    state.value = e.value;
+                if (index.toString() === e.target.id) {
+                    console.log('here')
+                    state.value = e.target.value;
                 }
                 return state;
             })
@@ -32,6 +32,7 @@ const CoreComponent = () => {
                         return (
                         <ChildrenComponent 
                             state={state}
+                            id={index}
                             onChangeValue={onChangeValue} 
                             key={index}
                         > 
