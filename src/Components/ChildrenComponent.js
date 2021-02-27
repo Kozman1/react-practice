@@ -1,13 +1,18 @@
 import { Children } from "react";
 
 
-const ChildrenComponent =  ({ children, value, onChangeValue}) => {
+const ChildrenComponent =  ({ state, index, children, onChangeValue }) => {
     return(
-        <li>
-            <label onChange={onChangeValue.bind(this)}>
-                <span>Current Value: {value}</span> 
-                {children}
+        <li className="list-item-wrapper">
+            <label className="input-label">
+                <span>Current Value: {state.value}</span> 
+                <input 
+                    id={index}
+                    {...state}
+                    onChange={onChangeValue.bind(this)}
+                />    
             </label>
+            {children}
         </li>
     );
 }
